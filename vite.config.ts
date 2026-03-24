@@ -53,8 +53,25 @@ export default defineConfig(({ mode }) => {
           cleanupOutdatedCaches: true,
           clientsClaim: true,
           skipWaiting: true,
-          globPatterns: ['**/*.{js,css,html,ico,png,svg,jpg,jpeg,webp,json,woff2,mp4}'],
+          // Keep precache lightweight to reduce first-install stutter on mobile.
+          globPatterns: ['**/*.{js,css,html,ico,svg,json,woff2}'],
+          maximumFileSizeToCacheInBytes: 3 * 1024 * 1024,
           runtimeCaching: [
+            {
+              urlPattern: ({ sameOrigin, url }) =>
+                sameOrigin && /\.(?:png|jpg|jpeg|webp)$/i.test(url.pathname),
+              handler: 'CacheFirst',
+              options: {
+                cacheName: 'app-images',
+                expiration: {
+                  maxEntries: 300,
+                  maxAgeSeconds: 60 * 60 * 24 * 30,
+                },
+                cacheableResponse: {
+                  statuses: [0, 200],
+                },
+              },
+            },
             {
               urlPattern: /^https:\/\/lh3\.googleusercontent\.com\/.*/i,
               handler: 'CacheFirst',
