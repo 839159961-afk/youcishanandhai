@@ -25,12 +25,12 @@ export function publicAssetUrl(filePath: string): string {
 }
 
 /** 市集全屏頁背景（集市街道插畫） */
-export const MARKET_STREET_BG_SRC = publicAssetUrl('bg/market-street.png');
+export const MARKET_STREET_BG_SRC = publicAssetUrl('bg/market-street.jpg');
 
-/** 山海日記 · 卷一頂部橫幅（水墨山水，`public/bg/diary-chapter-1-ink.png`） */
-export const DIARY_CHAPTER_A_HERO_BG = publicAssetUrl('bg/diary-chapter-1-ink.png');
+/** 山海日記 · 卷一頂部橫幅（水墨山水，`public/bg/diary-chapter-1-ink.jpg`） */
+export const DIARY_CHAPTER_A_HERO_BG = publicAssetUrl('bg/diary-chapter-1-ink.jpg');
 
-/** 主界面背景（`public/bg/main-0x.png`，統一版庭院稿：月門、信箱、涼亭、藥圃等） */
+/** 主界面背景（`public/bg/main-0x.jpg`，統一版庭院稿：月門、信箱、涼亭、藥圃等） */
 export const MAIN_BG_OPTIONS: {
   id: string;
   src: string;
@@ -42,7 +42,7 @@ export const MAIN_BG_OPTIONS: {
 }[] = [
   {
     id: 'scene-01',
-    src: publicAssetUrl('bg/main-01.png'),
+    src: publicAssetUrl('bg/main-01.jpg'),
     scene: 'COURTYARD',
     /* 月夜庭園、燈籠與靈狐 */
     weather: 'dusk',
@@ -51,7 +51,7 @@ export const MAIN_BG_OPTIONS: {
   },
   {
     id: 'scene-02',
-    src: publicAssetUrl('bg/main-02-sunny-tea.png'),
+    src: publicAssetUrl('bg/main-02-sunny-tea.jpg'),
     scene: 'COURTYARD',
     /* 晴天喝茶主界面 */
     weather: 'sunny',
@@ -60,7 +60,7 @@ export const MAIN_BG_OPTIONS: {
   },
   {
     id: 'scene-03',
-    src: publicAssetUrl('bg/main-03.png'),
+    src: publicAssetUrl('bg/main-03.jpg'),
     scene: 'COURTYARD',
     /* 雨中荷葉傘、雨線滿園 */
     weather: 'rainy',
@@ -69,7 +69,7 @@ export const MAIN_BG_OPTIONS: {
   },
   {
     id: 'scene-04',
-    src: publicAssetUrl('bg/main-07.png'),
+    src: publicAssetUrl('bg/main-07.jpg'),
     scene: 'COURTYARD',
     /* 取消重複雨景，改為晴景 */
     weather: 'sunny',
@@ -78,7 +78,7 @@ export const MAIN_BG_OPTIONS: {
   },
   {
     id: 'scene-05',
-    src: publicAssetUrl('bg/main-05.png'),
+    src: publicAssetUrl('bg/main-05.jpg'),
     scene: 'COURTYARD',
     /* 雪庭、雪人與雪中人參 */
     weather: 'snowy',
@@ -87,7 +87,7 @@ export const MAIN_BG_OPTIONS: {
   },
   {
     id: 'scene-06',
-    src: publicAssetUrl('bg/main-06-rain.png'),
+    src: publicAssetUrl('bg/main-06-rain.jpg'),
     scene: 'COURTYARD',
     /* 新增雨天稿 */
     weather: 'rainy',
@@ -96,7 +96,7 @@ export const MAIN_BG_OPTIONS: {
   },
   {
     id: 'scene-07',
-    src: publicAssetUrl('bg/main-07.png'),
+    src: publicAssetUrl('bg/main-07.jpg'),
     scene: 'COURTYARD',
     /* 春池映門、飛魚躍波 */
     weather: 'sunny',
@@ -132,7 +132,7 @@ export const TRIP_CYCLE_BG_OPTIONS: {
 }[] = [
   {
     id: 'trip-away-snowy',
-    src: publicAssetUrl('bg/trip-away-snowy.png'),
+    src: publicAssetUrl('bg/trip-away-snowy.jpg'),
     scene: 'COURTYARD',
     weather: 'snowy',
     label: '雪庭靜候',
@@ -140,7 +140,7 @@ export const TRIP_CYCLE_BG_OPTIONS: {
   },
   {
     id: 'trip-away-rainy',
-    src: publicAssetUrl('bg/trip-away-rainy.png'),
+    src: publicAssetUrl('bg/trip-away-rainy.jpg'),
     scene: 'COURTYARD',
     weather: 'rainy',
     label: '雨幕庭前',
@@ -148,7 +148,7 @@ export const TRIP_CYCLE_BG_OPTIONS: {
   },
   {
     id: 'trip-away-dusk',
-    src: publicAssetUrl('bg/trip-away-dusk.png'),
+    src: publicAssetUrl('bg/trip-away-dusk.jpg'),
     scene: 'COURTYARD',
     weather: 'dusk',
     label: '暮光歸途',
@@ -156,7 +156,7 @@ export const TRIP_CYCLE_BG_OPTIONS: {
   },
   {
     id: 'trip-away-sunny-spring',
-    src: publicAssetUrl('bg/trip-away-sunny-spring.png'),
+    src: publicAssetUrl('bg/trip-away-sunny-spring.jpg'),
     scene: 'COURTYARD',
     weather: 'sunny',
     label: '花朝小院',
@@ -164,7 +164,7 @@ export const TRIP_CYCLE_BG_OPTIONS: {
   },
   {
     id: 'trip-away-autumn',
-    src: publicAssetUrl('bg/trip-away-autumn.png'),
+    src: publicAssetUrl('bg/trip-away-autumn.jpg'),
     scene: 'COURTYARD',
     weather: 'autumn',
     label: '秋照山門',
@@ -172,7 +172,7 @@ export const TRIP_CYCLE_BG_OPTIONS: {
   },
   {
     id: 'trip-away-sunny-clear',
-    src: publicAssetUrl('bg/trip-away-sunny-clear.png'),
+    src: publicAssetUrl('bg/trip-away-sunny-clear.jpg'),
     scene: 'COURTYARD',
     weather: 'sunny',
     label: '晴苑無人',
