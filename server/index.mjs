@@ -4,7 +4,7 @@ import path from 'node:path';
 import express from 'express';
 
 const app = express();
-const PORT = Number(process.env.PORT || 8787);
+const PORT = Number(process.env.PORT || 3000);
 const DATA_DIR = path.resolve(process.cwd(), 'server-data');
 const USERS_FILE = path.join(DATA_DIR, 'users.json');
 const SAVES_DIR = path.join(DATA_DIR, 'saves');
@@ -158,8 +158,8 @@ app.put('/api/save', requireAuth, async (req, res) => {
 
 ensureStorage()
   .then(() => {
-    app.listen(PORT, () => {
-      console.log(`[save-server] listening on http://localhost:${PORT}`);
+    app.listen(PORT, '0.0.0.0', () => {
+      console.log(`[save-server] listening on http://0.0.0.0:${PORT}`);
     });
   })
   .catch((err) => {
