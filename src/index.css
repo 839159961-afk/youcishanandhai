@@ -1,0 +1,246 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Noto Serif SC", "Noto Serif", serif;
+  --font-headline: "Noto Serif SC", serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+  --font-label: "Plus Jakarta Sans", sans-serif;
+
+  --color-primary: #6d5c43;
+  --color-primary-container: #a59074;
+  --color-on-primary: #ffffff;
+  --color-secondary: #516447;
+  --color-secondary-container: #d4e9c4;
+  --color-on-secondary: #ffffff;
+  --color-tertiary: #7d562d;
+  --color-tertiary-container: #b88a5c;
+  --color-background: #fcf9f1;
+  --color-surface: #fcf9f1;
+  --color-on-surface: #1c1c17;
+  --color-on-surface-variant: #4d463d;
+  --color-outline: #7e766c;
+  --color-outline-variant: #d0c5b9;
+
+  /* Material-style surfaces（與組件 class 對齊，避免樣式 token 缺失） */
+  --color-on-background: #1c1c17;
+  --color-surface-container-lowest: #faf8f3;
+  --color-surface-container-low: #f0ebe0;
+  --color-surface-container: #e8e2d6;
+  --color-surface-container-high: #ddd6c8;
+  --color-surface-container-highest: #d0c9bb;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    min-height: 100dvh;
+  }
+
+  body {
+    @apply bg-background text-on-surface font-body selection:bg-primary-container/30;
+    overflow-x: hidden;
+    overscroll-behavior-y: none;
+  }
+}
+
+.parchment-texture {
+  background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDHGzz40Gvl2y2QyDsrxBNEXloR6EPFoXDHlUb1ngRvUc_z0vhzQsk7hGl1eM4my5NfgIbZ8u6A8heKzy5UNPcI2ovh3a03pO9b84wWHAm2TfL5eD_1q8wiqKeprAAnji-v5jmyjjvndiWAmN_0dRkiUROLzQH3zkNV34lU823r2CSkJ7Gmf707SuzRU88_KnHV85fCrdsD2S9NmLtE88zx8DG7ehTJ4iZZl_7SW4s1wr35CrlVs-NwJHNG5JAhy5jP3TTDCa4ChzAw);
+  background-color: #fcf9f1;
+}
+
+/* 集市購買彈窗專用：底圖 + 噪點 + 柔和漸層的羊皮紙紋理 */
+.market-parchment-texture {
+  background-color: #fcf9f1;
+  background-image:
+    linear-gradient(to bottom right, rgba(255, 255, 255, 0.36), rgba(228, 214, 190, 0.28)),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 100 100'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.78' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='0.095'/%3E%3C/svg%3E"),
+    url(https://lh3.googleusercontent.com/aida-public/AB6AXuDHGzz40Gvl2y2QyDsrxBNEXloR6EPFoXDHlUb1ngRvUc_z0vhzQsk7hGl1eM4my5NfgIbZ8u6A8heKzy5UNPcI2ovh3a03pO9b84wWHAm2TfL5eD_1q8wiqKeprAAnji-v5jmyjjvndiWAmN_0dRkiUROLzQH3zkNV34lU823r2CSkJ7Gmf707SuzRU88_KnHV85fCrdsD2S9NmLtE88zx8DG7ehTJ4iZZl_7SW4s1wr35CrlVs-NwJHNG5JAhy5jP3TTDCa4ChzAw);
+  background-size: cover, 220px 220px, cover;
+  background-position: center, 0 0, center;
+  background-blend-mode: soft-light, normal, normal;
+}
+
+/* 行囊頁細點羊皮紋（stitch code.html / DESIGN Living Parchment） */
+.parchment-dots {
+  background-color: #fcf9f1;
+  background-image:
+    radial-gradient(#e5e2da 0.5px, transparent 0.5px),
+    radial-gradient(#e5e2da 0.5px, #fcf9f1 0.5px);
+  background-size: 20px 20px;
+  background-position:
+    0 0,
+    10px 10px;
+}
+
+.ink-wash-fade {
+  mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
+}
+
+/* 山海日記（stitch code.html）：羊皮噪點底、宣紙卡、淡墨邊 */
+.diary-parchment-texture {
+  background-color: #fcf9f1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 100 100'%3E%3Cfilter id='n' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+}
+
+.xuan-card {
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 255, 255, 0.8)
+  );
+  backdrop-filter: blur(4px);
+}
+
+.ink-bleed-border {
+  box-shadow: 0 0 15px rgba(109, 92, 67, 0.05);
+  border: 1px solid rgba(109, 92, 67, 0.1);
+}
+
+.ink-blot {
+  position: absolute;
+  background: radial-gradient(circle, rgba(28, 28, 23, 0.15) 0%, rgba(28, 28, 23, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.rain-drop {
+  position: absolute;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.06), rgba(220, 236, 255, 0.6));
+  width: 1px;
+  height: 12px;
+  border-radius: 999px;
+  top: -20px;
+  animation: rain-fall linear infinite;
+  filter: drop-shadow(0 0 3px rgba(196, 220, 255, 0.22));
+}
+
+@keyframes rain-fall {
+  0% {
+    transform: translate3d(0, -2vh, 0);
+  }
+  100% {
+    transform: translate3d(var(--rain-drift, 0px), 110vh, 0);
+  }
+}
+
+.leaf {
+  position: absolute;
+  top: -20px;
+  font-size: 20px;
+  animation: leaf-fall linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes leaf-fall {
+  0% {
+    transform: translateY(0) rotate(0deg) translateX(0);
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg) translateX(50px);
+  }
+}
+
+.blossom {
+  position: absolute;
+  top: -20px;
+  font-size: 18px;
+  animation: blossom-fall linear infinite;
+  opacity: 0.78;
+  filter: drop-shadow(0 0 3px rgba(255, 215, 228, 0.45));
+}
+
+@keyframes blossom-fall {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate3d(var(--blossom-drift, 16px), 100vh, 0) rotate(360deg);
+  }
+}
+
+.firefly-wrap {
+  position: absolute;
+  animation: firefly-drift ease-in-out infinite;
+}
+
+.firefly {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle,
+    rgba(196, 255, 138, 0.98) 0%,
+    rgba(122, 224, 104, 0.96) 28%,
+    rgba(76, 170, 88, 0.82) 52%,
+    rgba(76, 170, 88, 0) 78%
+  );
+  box-shadow:
+    0 0 11px 4px rgba(247, 204, 86, 0.52),
+    0 0 6px 2px rgba(134, 238, 126, 0.48),
+    0 0 2px 1px rgba(255, 249, 196, 0.92);
+  mix-blend-mode: screen;
+  transform: translate3d(var(--repel-x, 0px), var(--repel-y, 0px), 0);
+  transition: transform 220ms ease-out;
+}
+
+@keyframes firefly-drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.85);
+    opacity: 0.3;
+  }
+  25% {
+    transform: translate3d(calc(var(--firefly-dx, 10px) * 0.45), calc(var(--firefly-dy, 10px) * -0.4), 0)
+      scale(var(--firefly-scale, 1));
+    opacity: 1;
+  }
+  50% {
+    transform: translate3d(var(--firefly-dx, 10px), var(--firefly-dy, 10px), 0) scale(0.9);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translate3d(calc(var(--firefly-dx, 10px) * -0.35), calc(var(--firefly-dy, 10px) * 0.35), 0)
+      scale(var(--firefly-scale, 1));
+    opacity: 0.98;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(0.85);
+    opacity: 0.3;
+  }
+}
+
+.snow-flake {
+  position: absolute;
+  top: -12px;
+  width: 4px;
+  height: 4px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.72);
+  animation: snow-drift linear infinite;
+  opacity: 0.75;
+}
+
+@keyframes snow-drift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(var(--snow-drift, 24px), 110vh, 0);
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

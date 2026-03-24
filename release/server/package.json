@@ -1,0 +1,12 @@
+{
+  "name": "elderwood-garden-save-server",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node index.mjs"
+  },
+  "dependencies": {
+    "express": "^4.22.1"
+  }
+}
